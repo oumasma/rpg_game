@@ -9,7 +9,7 @@ class Character {
         this.costSpecialAttack = costSpecialAttack;
 
     }
-    takeDamage = (dmgReceived) => {
+    takeDamage = (dmgReceived) => { //method
         if(dmgReceived < this.hp) {
           this.hp -= dmgReceived;
         } else {

@@ -1,5 +1,5 @@
 class Monk extends Character {
-    constructor(name, hp, dmg, mana, costSpecialAttack) {
+    constructor(name = "Moana", hp, dmg, mana, costSpecialAttack) {
       super(name);
       this.hp = 8;
       this.dmg = 2;
