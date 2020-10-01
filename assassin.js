@@ -1,15 +1,13 @@
 class Assassin extends Character {
-    constructor(name =  "Draven", hp = 6,  status = "playing", mana = 20, dmg = 8, Shadowhit) {
-        super(name, hp, mana, dmg, status);
-        this.Shadowhit = Shadowhit;
-    }
+  constructor(name, hp, dmg, mana, costSpecialAttack) {
+    super(name);
+    this.hp = 6;
+    this.dmg = 6;
+    this.mana = 20;
+    this.costSpecialAttack = 20;
+  }
+
+  shadowHit = (ennemy) => {
+
+  }
 }
-let instance1 = new Assassin("13h57", 4);
-
-
-/*let shadowhit ={
-  damage : 0,
-  attackSpcial : 7,
-  noDeadVictim: -7,
-  attackCoast: {20 - "mana"}
-};*/
