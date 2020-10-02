@@ -16,14 +16,17 @@ class Game {
 
 	startTurn = () => {
 		console.log('-----');
-		const turnNumber = this.totalTurns - thi.turnLeft + 1;
+		const turnNumber = this.totalTurns - this.turnLeft + 1;
 		console.log(`tour n° : ${turnNumber} / ${this.totalTurns}`);
 
 		this.playersList.forEach((player) => {
 			player.initNewTurn();
 		});
 
-		this.playersTurns = [...this.playersList];
+		this.playersTurns = this.playersList.filter((player) => {
+			player.isAlive()
+		});
+		
 		this.pickPlayerInTurn();
 	}
 
@@ -35,4 +38,25 @@ class Game {
 	nextPlayer = () => {
 
 	}
-}
+
+
+	whatchStats = () => {
+		this.playersList.forEach(player => {
+			if (!player.isAlive()) {
+				console.log(`${player.game} est mort : RIP `);
+			} else {
+				console.log(`Toujours en vie`);
+			}
+				console.log(`${player.game} : ${player.hp} hp, ${player.dmg} dmg, ${player.mana} mana`);
+		});
+	}
+
+	currentPlayerAttacks = (victim) => {
+		const player = this.playersTurns[this.currentPlayerIndex];
+		if (player.name === victime.name) {
+			console.log(`Je ne peux pas m'attaquer moi meme`);
+			return;
+		}
+		player.attacks(victim);
+		this.nextPlayer();
+	}
