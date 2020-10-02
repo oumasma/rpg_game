@@ -1,44 +1,38 @@
 class Game {
-    constructor( turnLeft = 10 , gamers = new Array(), status = true) {
-        this.turnLeft;
-        this.gamers = gamers;
-        this.status = status;
-    };
 
-    
-    initializeGamers = () => {
-        let gamer1 = new Fighter();
-        let gamer2 = new Assassin();
-        let gamer3 = new Monk();
-        let gamer4 = new Paladin();
-        let gamer5 = new Berzerker();
+	totalTurns = 10;
+	turnLeft = 10;
+	playersList = [];
+	playersTurns = [];
+	currentPlayerIndex = 0;
 
-        this.gamers.push(gamer1, gamer2, gamer3, gamer3, gamer4, gamer5);
-        console.log("Voici les joueurs : ", gamersgit);
+	startGame = () => {
+		this.startTurn();
+	}
 
-    };
-    /*
-    skipTurn = () => { // method lost a tour
-        if(turnLeft >= 0) { // 10 > 0
-            this.turnLeft -= 1; // turnLetf 9
-            console.log(`C'est le Tour n° : ${this.turnLeft}`);
-          } else {
-            turnLeft = 0; //turnLeft 0
-            this.status = "Winne"; // change status player "winner"
-            console.log("Fin du game")
-          }
-    };
+	addPlayer = (player) => {
+		this.playersList.push(player);
+	}
 
-    startTurn = (turnLeft) => { //chaque tour = starTurn
-        if(turnLeft >= 0) {
-            this.turnLeft -= 1;
-            console.log(`C'est le Tour n° : ${this.turnLeft}`);
-          } else {
-            turnLeft = 0;
-            console.log(startTurn)
-          }
-        
-    };*/
+	startTurn = () => {
+		console.log('-----');
+		const turnNumber = this.totalTurns - thi.turnLeft + 1;
+		console.log(`tour n° : ${turnNumber} / ${this.totalTurns}`);
 
+		this.playersList.forEach((player) => {
+			player.initNewTurn();
+		});
 
-};
+		this.playersTurns = [...this.playersList];
+		this.pickPlayerInTurn();
+	}
+
+	pickPlayerInTurn = () => {
+		this.currentPlayerIndex = getRandomNumber
+
+	}
+
+	nextPlayer = () => {
+
+	}
+}
